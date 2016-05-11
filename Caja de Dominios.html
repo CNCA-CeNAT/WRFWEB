@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://testing.ceibasoft.net/Dominios/CajaDominios.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Caja de Dominios</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./Caja de Dominios_files/style.css">
+        <!-- Latest compiled and minified CSS -->     
+        
+        <script src="css/bootstrap.min.js"></script>
+        
+        <link href="css/bootstrap-spinner.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="http://openlayers.org/api/OpenLayers.js"></script>
+		
+		<script type="text/javascript">
+
+        var map, vectors, controls;
+
+
+        function init(){
+			alert("creating map");
+		
+            map = new OpenLayers.Map('map');
+
+            //Layer base(del mapa)
+            var wms = new OpenLayers.Layer.WMS( "OpenLayers WMS", 
+                "http://vmap0.tiles.osgeo.org/wms/vmap0?", {layers: 'basic'});
+
+            OpenLayers.Feature.Vector.style['default']['strokeWidth'] = '2';
+
+            // allow testing of specific renderers via "?renderer=Canvas", etc
+            var renderer = OpenLayers.Util.getParameters(window.location.href).renderer;
+            renderer = (renderer) ? [renderer] : OpenLayers.Layer.Vector.prototype.renderers;
+
+
+            //Capa de los poligonos
+            vectors = new OpenLayers.Layer.Vector("Vector Layer", {
+                renderers: renderer
+                // style: 
+            });
+
+            map.addLayers([wms, vectors]);//Agregamos las 2 capas
+
+            //map.addControl(new OpenLayers.Control.LayerSwitcher());
+            map.addControl(new OpenLayers.Control.MousePosition());
+            
+
+            if (console && console.log) {
+                function report(event) {
+                    console.log(event.type, event.feature ? event.feature.id : event.components);
+                }
+                vectors.events.on({
+                    "beforefeaturemodified": report,
+                    "featuremodified": report,
+                    "afterfeaturemodified": report,
+                    "vertexmodified": report,
+                    "sketchmodified": report,
+                    "sketchstarted": report,
+                    "sketchcomplete": report
+                });
+            }
+
+            controls = { // (LLave, valor)
+
+                // point: new OpenLayers.Control.DrawFeature(vectors,
+                //             OpenLayers.Handler.Point),
+
+                // line: new OpenLayers.Control.DrawFeature(vectors,
+                //             OpenLayers.Handler.Path),
+
+                // polygon: new OpenLayers.Control.DrawFeature(vectors,
+                //             OpenLayers.Handler.Polygon),
+
+
+                //Dibujar Poligono de 4 lados e irregular
+                regular: new OpenLayers.Control.DrawFeature(vectors,
+                            OpenLayers.Handler.RegularPolygon,
+                            {handlerOptions: {sides: 4, irregular: true}}),
+
+                //Modificar Poligono
+                modify: new OpenLayers.Control.ModifyFeature(vectors)
+            };
+            
+            //Agrega controles al mapa
+            for(var key in controls) {
+                map.addControl(controls[key]);
+            }
+            
+            map.setCenter(new OpenLayers.LonLat(0, 0), 3);
+
+            //Para que siempre se inicie con navigate
+            document.getElementById('noneToggle').checked = true;
+        }
+        
+
+        function update() {
+            // reset modification mode
+            controls.modify.mode = OpenLayers.Control.ModifyFeature.RESHAPE;
+
+            // var rotate = document.getElementById("rotate").checked;
+
+            // if(rotate) {
+            //     controls.modify.mode |= OpenLayers.Control.ModifyFeature.ROTATE;
+            // }
+
+            // var resize = document.getElementById("resize").checked;
+
+            // if(resize) {
+                controls.modify.mode |= OpenLayers.Control.ModifyFeature.RESIZE;
+                // var keepAspectRatio = document.getElementById("keepAspectRatio").checked;
+                
+                // if (keepAspectRatio) {
+                    controls.modify.mode &= ~OpenLayers.Control.ModifyFeature.RESHAPE;
+                // }
+            // }
+
+            // var drag = document.getElementById("drag").checked;
+
+            // if(drag) {
+                controls.modify.mode |= OpenLayers.Control.ModifyFeature.DRAG;
+                //controls.modify.mode &= ~OpenLayers.Control.ModifyFeature.RESHAPE;
+            // }
+
+            // if (rotate || drag) {
+            //     controls.modify.mode &= ~OpenLayers.Control.ModifyFeature.RESHAPE;
+            // }
+
+            //controls.modify.createVertices = document.getElementById("createVertices").checked;
+            
+            // var sides = parseInt(document.getElementById("sides").value);
+            // sides = Math.max(3, isNaN(sides) ? 0 : sides);
+            // controls.regular.handler.sides = sides;
+
+            // var irregular =  document.getElementById("irregular").checked;
+            // controls.regular.handler.irregular = true;
+        }
+
+        //Manejador de Controles
+        function toggleControl(element) {
+            for(key in controls) {
+                var control = controls[key];
+                if(element.value == key && element.checked) {
+
+                    if(element.value === "modify"){ update()}
+
+                    control.activate();
+                } else {
+                    control.deactivate();
+                }
+            }
+        }
+        
+    </script>
+		
+		
+		
+		
+        <style>        
+        	#map-canvas{
+        		width: 98%; 
+        		height: 92%; 
+        		background-color: gray;
+        	}
+        	.pane{
+        		border-style: solid;
+        		border-width: 1px;
+        		border-color: black;
+        		height: 100%;
+        		background-color: #DDDDDD;
+        	}
+        	.pane-right{
+        		overflow: scroll;
+        	}
+        	.hspace{
+        		margin: 5px 0px 5px 0px;
+        	}
+        	.domain{
+        		padding: 10px;
+        		margin: 5px;
+        		border-style: solid;
+        		border-width: 1px;
+        		border-radius: 15px;
+        		background-color: #FFFFFF;
+        	}
+        	.main-container{
+        		position:absolute;
+        		top: 0;
+        		bottom: 0;
+        		left: 0;
+        		right: 0;
+        		overflow: hidden;
+        		padding-left: 2%;
+        		padding-right: 2%;
+        		z-index: -1;
+        	}
+        	.header .footer{
+        		height: 10%;
+        	}
+        	.content{
+        		height: 80%;
+        	}
+        	.icon-arrows{
+        		text-align: center;
+        		vertical-align: bottom;
+        		width: 100%;
+        	}
+        	html{
+        		min-height:100%;
+        	}
+        	
+        	body{
+        		height:100%;
+        	}
+			
+			#controls {
+				width: 512px;
+			}
+			#controlToggle {
+				padding-left: 1em;
+			}
+			#controlToggle li {
+				list-style: none;
+			}
+
+			#map {
+                width: 100%;
+                height: 100%;    
+			}
+			
+			
+        </style>
+        
+    </head>
+    
+    <body onload="init()">     
+        <div class="main-container">
+            <div class="row header">
+            	<h1>Encabezado</h1>
+            </div>
+            
+            <div class="row content">
+                <!--Left pane-->
+                <div class="col-lg-8 pane">
+                	<div id="map">
+                		
+                	</div>
+                </div>
+                <!--Right pane-->
+                <div class="col-lg-4 pane pane-right">
+                	
+                    <!-- DOMAIN -->
+                    <div class="domain">
+	                    <div class="row">
+	                    	<h3 class="col-md-12">Dominio</h3>                                                  
+	                    </div>
+	                    <div class="row">
+		                    <div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><label class="control-label" for="input-resolucion">Resolución: </label></div>      
+		                        <div class="col-md-8"><input type="text" class="form-control input-sm" id="input-resolucion"></div>                                           
+		                    </div>
+		                </div>
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputNorte"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputOeste"></div>      
+		                        <div class="col-md-4"><span class="icon-arrows fa fa-arrows"></span></div> 
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputEste"></div>      
+		                    </div>
+		                </div> 
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputSur"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>    
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="button" class="btn btn-primary" id="Subdominio" value="Subdominio"></div>      
+		                        <div class="col-md-4"></div> 
+		                        <div class="col-md-4"><input type="button" class="btn btn-danger" id="Eliminar" value="Eliminar"></div>      
+		                    </div>
+		                </div>
+	                </div>
+                	<!-- DOMAIN -->
+                	
+                	<!-- DOMAIN -->
+                    <div class="domain">
+	                    <div class="row">
+	                    	<h3 class="col-md-12">Dominio</h3>                                                  
+	                    </div>
+	                    <div class="row">
+		                    <div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><label class="control-label" for="input-resolucion">Resolución: </label></div>      
+		                        <div class="col-md-8"><input type="text" class="form-control input-sm" id="input-resolucion"></div>                                           
+		                    </div>
+		                </div>
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputNorte"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputOeste"></div>      
+		                        <div class="col-md-4"><span class="icon-arrows fa fa-arrows"></span></div> 
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputEste"></div>      
+		                    </div>
+		                </div> 
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputSur"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>    
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="button" class="btn btn-primary" id="Subdominio" value="Subdominio"></div>      
+		                        <div class="col-md-4"></div> 
+		                        <div class="col-md-4"><input type="button" class="btn btn-danger" id="Eliminar" value="Eliminar"></div>      
+		                    </div>
+		                </div>
+	                </div>
+                	<!-- DOMAIN -->
+                	
+                	<!-- DOMAIN -->
+                    <div class="domain">
+	                    <div class="row">
+	                    	<h3 class="col-md-12">Dominio</h3>                                                  
+	                    </div>
+	                    <div class="row">
+		                    <div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><label class="control-label" for="input-resolucion">Resolución: </label></div>      
+		                        <div class="col-md-8"><input type="text" class="form-control input-sm" id="input-resolucion"></div>                                           
+		                    </div>
+		                </div>
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputNorte"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputOeste"></div>      
+		                        <div class="col-md-4"><span class="icon-arrows fa fa-arrows"></span></div> 
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputEste"></div>      
+		                    </div>
+		                </div> 
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"></div>
+		                        <div class="col-md-4"><input type="number" class="form-control input-sm" id="InputSur"></div>      
+		                        <div class="col-md-4"></div>                                         
+		                    </div>
+		                </div>    
+		                
+		                <div class="row"><span class="col-md-12 hspace"></span></div>
+		                
+		                <div class="row">
+		                	<div class="form-group form-group-sm">                          
+		                        <div class="col-md-4"><input type="button" class="btn btn-primary" id="Subdominio" value="Subdominio"></div>      
+		                        <div class="col-md-4"></div> 
+		                        <div class="col-md-4"><input type="button" class="btn btn-danger" id="Eliminar" value="Eliminar"></div>      
+		                    </div>
+		                </div>
+	                </div>
+                	<!-- DOMAIN -->
+                	
+                </div>
+            </div>
+            
+            <div class="row footer">
+            	<h1>Pie de página</h1>
+            </div>
+        </div>
+    
+
+</body></html>
