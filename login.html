@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="loginApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login sistema</title>
     <!-- CSS de Bootstrap -->
-    <link href="bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="sources/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!--Angular js -->
-    <script src="angular-1.5.5/angular.min.js"></script>
+    <script src="sources/angular-1.5.5/angular.min.js"></script>
     <!--font awesome -->
-    <link rel="stylesheet" href="font-awesome-4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sources/font-awesome-4.6.1/css/font-awesome.min.css">
     <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <script src="loginApp.js"></script>
+  <body ng-controller="loginCtrl as vm">
+    <script src="sources/loginApp.js"></script>
     
     <div class="col-md-6 col-md-offset-3">
     <h2>Sistema WRF</h2>
-    <form name="form" ng-submit="login()" role="form"> 
+    <form name="form" ng-submit="vm.login()" role="form"> 
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
             <label for="username">Usuario</label>
             <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
