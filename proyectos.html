@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="proyectoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrador Proyectos</title>
+    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="proyectoCtrl">
+      <div class="container-fluid">
+        <div name="btn-new">
+		<!--boton de nuevo proyecto -->
+          <button ng-click="toggleModal('mostrar')" class="fa fa-plus-square fa-4x" aria-hidden="true"></button>
+        <!-- boton de salir -->
+          <button align="right" class="fa fa-sign-out fa-3x" aria-hidden="true"></button>
+ 
+          <!--ventana emergente -->
+		  <modal visible="showModal"> 
+		  	<form id="newForm">
+		  		<label>Nombre:</label>
+		  		<input type="text" id="nombreProyecto" ng-model="nuevoProyecto" />
+		  	</form>
+		  	</br>
+		  	<textarea placeholder="Descripción" rows="4" cols="50" name="comment" form="newForm"></textarea>
+		  	</br>
+		  	<button type="submit" form="newForm">Aceptar</button>
+		  </modal>
+        </div> 
+        <!--Seccion central con los nombres de proyectos -->
+        <form class="col-md-6 col-md-offset-3">
+          <table class="table" cols="3" rows="3">
+            <tr ng-repeat="project in projects">
+              <td><i class="fa fa-folder" aria-hidden="true"></i> <a href="#" ng-click="show(project.nombre, project.descripcion)">{{project.nombre}}</a></td>
+            </tr>
+          </table>
+        </form>
+		<!--seccion izquierda muestra información -->
+        <div name="info" ng-show="showInfo">
+          <fieldset>
+          	<legend>Informacion de Proyectos</legend>
+          	<form class="form-group">
+            	<label class="text-right">Nombre</label>
+            	</br>
+            	<div id="nombre"></div>
+            	</br>
+            	<label class="text-right">Descripción</label> 
+            	</br>
+            	<div id="descripcion"></div>
+            	</br>
+            	<!-- boton para editar -->
+            	<button class="fa fa-pencil-square-o fa-3x" aria-hidden="true" ng-click""></button>
+				<!-- boton para eliminar -->
+            	<button class="fa fa-times fa-3x" aria-hidden="true" ng-click=""></button>
+            	<button type="button" class="close" aria-hidden="true">&times;</button>
+          	</form>
+          </fieldset>
+        </div> 
+      </div> 
+    <!--Scripts-->
+    <!-- CSS de Bootstrap -->
+    <link href="sources/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet" media="screen">
+    <!-- Librería jQuery requerida por los plugins de JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> 
+	<!--Angular js --> 
+	<script type="text/javascript" src="sources/angular-1.5.5/angular.js"></script> 
+	<!-- font awesome -->
+    <link rel="stylesheet" href="sources/font-awesome-4.6.1/css/font-awesome.css"> 
+    <!--JavaScript-->
+    <script type="text/javascript" src="sources/proyectosApp.js"></script>
+ 
+  </body>
+</html>
