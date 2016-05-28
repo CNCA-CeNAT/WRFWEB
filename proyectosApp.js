@@ -12,9 +12,7 @@ app.controller("proyectoCtrl",['$scope','$window','$http', function($scope, $win
         $scope.buttonClicked = btnClicked;
         $scope.showModal = !$scope.showModal;
     };
-    //funciones extra de prueba
-    $scope.msj ="hola mundo";
-    /*
+    
     //funcion para cargar los proyectos 
 	$http.get(/*direccion en server para traer los proyectos).success(function(data){
 		$scope.proyectos=data
@@ -54,9 +52,27 @@ app.controller("proyectoCtrl",['$scope','$window','$http', function($scope, $win
 	};
 	//funcion para devolverlo a la pagina de salida 
 	$scope.logOut = function(){
-		//$window.location.href = "" ---aqui va el link de la pagina que sigue
+		$window.location.href = "index.html";
 	};
-    //------------------------------------------------
+    //funcion de http que envia los datos para el nuevo proyecto 
+    $scope.newProject = function(){
+		$scope.dato = document.getElementById("nProyecto").value;
+    	var req = {
+				method: 'POST', 
+				url: 'http://sharelatex.cenat.ac.cr:8080/interfazWRF/Proyectos',
+				data: "nuevo"+"¡"+$scope.dato
+			};
+			$http(req).then(function (response) {       //successCallback
+					console.log("entre al exitoso");//debugger borrar--------------
+				console.log(response.data);//debugger borrar--------------
+    				//$scope.result = response.data;
+    				// $window.location.href = "" ---aqui va el link de la pagina que sigue
+  				}, function (response) {
+    	    			console.log("entre al error");//debugger borrar--------------
+    	   			console.log(response.data);//debugger borrar--------------
+    				//$scope.error = response.data;
+  				});
+  			};
   }]); 
 //codigo de la ventana que se mostrara 
 app.directive("modal", function () {
