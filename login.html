@@ -2,59 +2,56 @@
 <html lang="en" ng-app="loginApp">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login sistema</title>
-    <!-- CSS de Bootstrap -->
-    <link href="sources/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!--Angular js -->
-    <script src="sources/angular-1.5.5/angular.min.js"></script>
-    <!--font awesome -->
-    <link rel="stylesheet" href="sources/font-awesome-4.6.1/css/font-awesome.min.css">
-    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>login</title>
+      <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
   </head>
   <body ng-controller="loginCtrl as vm">
-    <script src="sources/loginApp.js"></script>
-    
-    <div class="col-md-6 col-md-offset-3">
-    <h2>Sistema WRF</h2>
-    <form name="form" ng-submit="vm.login()" role="form"> 
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Usuario</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Usuario requerido</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Contraseña requerida</span>
-        </div>
-        <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="fa fa-sign-in fa-3x" aria-hidden="true"></button>
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sistema WRF</h2>
+      <form name="form" ng-submit="vm.login()" role="form"> 
+          <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+              <label for="username">Usuario</label>
+              <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+              <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Usuario requerido</span>
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
+              <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Contraseña requerida</span>
+          </div>
+          <div class="form-actions">
+              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="fa fa-sign-in fa-3x" aria-hidden="true"></button>
             
-        </div>
-    </form>
-  </div> 
+          </div>
+      </form>
+    </div> 
 
-  <br/>
-  <br/>
+    <br/>
+    <br/>
 
-  <div class="col-md-6 col-md-offset-3">
-    <label for="error">Espacio designado para mostrar los errores de login</label>
+    <div class="col-md-6 col-md-offset-3">
+      <form id="error"></form>
+    </div>
       
-    
-  </div>
+    <!--Scripts-->
+    <!-- CSS de Bootstrap -->
+    <link href="sources/bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet" media="screen">
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
-    <script src="http://code.jquery.com/jquery.js"></script>
- 
-    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
-         incluir archivos JavaScript individuales de los únicos
-         plugins que utilices) -->
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> 
+  <!--Angular js --> 
+  <script type="text/javascript" src="sources/angular-1.5.5/angular.js"></script> 
+  <!-- font awesome -->
+    <link rel="stylesheet" href="sources/font-awesome-4.6.1/css/font-awesome.css"> 
+    <!--JavaScript-->
+    <script type="text/javascript" src="sources/loginApp.js"></script>
   </body>
-</html> 
+</html>
 
