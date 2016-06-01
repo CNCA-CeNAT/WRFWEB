@@ -4,70 +4,69 @@ import java.util.Arrays;
 
 public class Proyectos {
 	
+	public Proyectos(){
+		
+	}
 	//se define que la forma de enviar los datos va a ser un strin y & va a ser el separador de parametros
 	
 	//ruta absoluta donde se va a encotrar el workspace
-	public String workspace = "/home/tomcat/webapps/interfazWRF/userWorkspace";//completar 
+	public String workspace = "/home/tomcat/webapps/interfazWRF/userWorkspace/";//completar 
 	public String out = "";
 	
-	public String crearCarpetaUsuario(String nombre) throws IOException{
-        //String workspace= "/home/brucce/Documentos/";  SOLO REFERENCIA              
+	public String crearCarpetaUsuario(String nombre) throws IOException{              
         File carpetaUsuario = new File(workspace+nombre);
         if(carpetaUsuario.exists()){
-        	out = carpetaUsuario.getName();//almacena la direccion de la carpeta en una variable 
-            //System.out.println(carpetaUsuario.getName());
+        	out = workspace+carpetaUsuario.getName();
         }
         else{
             carpetaUsuario.mkdir(); 
             out = carpetaUsuario.getName();
-            //System.out.println("Se creo el directorio");
+            
         }
-        return out; //cambio el metodo a Strig, para que retorne la dirección
+        return out; 
 	}
 	
-	public void crearCarpetaProyecto(String nombre, String nombreProyecto){
-		//String workspace = "/home/brucce/Documentos/"; SOLO REFERENCIA
+	public String crearCarpetaProyecto(String nombre, String nombreProyecto){
 		String usuario=workspace+nombre;
 		File carpetaUsuario = new File(workspace+nombre);
 		File carpetaProyecto = new File(usuario+"/"+nombreProyecto);
 		if(carpetaUsuario.exists()){
 			if(carpetaProyecto.exists()){
-				System.out.println("La carpeta: "+carpetaProyecto.getName()+" ya existe");            
+				out = "la carpeta ya existe";            
 			}
 			else{
 				carpetaProyecto.mkdir();
-				System.out.println("Se creo la carpeta del proyecto");
+				out = "se creo exitosamente";
 			}
         
 		}
 		else{       
-			System.out.println("No se encuentra la carpeta del usuario creada");
-		}   
+			out = "no existe la carpeta usuario";
+		}
+		return out;   
 	}
 
-	public void eliminarProyecto(String nombre, String nombreProyecto){
-		//String workspace = "/home/brucce/Documentos/";SOLO REFERENCIA
+	public String eliminarProyecto(String nombre, String nombreProyecto){
 		String usuario=workspace+nombre;
 		File carpetaUsuario = new File(workspace+nombre);
 		File carpetaProyecto = new File(usuario+"/"+nombreProyecto);
 		if(carpetaUsuario.exists()){
 			if(carpetaProyecto.exists()){
 				carpetaProyecto.delete();
-				out = carpetaProyecto.getName();
-				//System.out.println("Se elimino la carpeta: "+ carpetaProyecto.getName());
+				out = "se elimino exitosamente "+ carpetaProyecto.getName();
 			}
 			else{
-				System.out.println("No se encuentra la carpeta: "+ carpetaProyecto.getName());
+				out = "no se pudo eliminar";
 			}
         
 		}
 		else{       
-			System.out.println("No se encuentra la carpeta del usuario creada");
+			out = "no existe la carpeta";
 		}
+		return out;
 	}
 
-	public String eliminarUsuario(String nombre){
-		//String workspace= "/home/brucce/Documentos/";SOLO REFERENCIA                
+	public String eliminarUsuario(String nombre){               
 		File carpetaUsuario = new File(workspace+nombre);
 		if(carpetaUsuario.exists()){
 			carpetaUsuario.delete();
@@ -81,18 +80,26 @@ public class Proyectos {
 	}
 	 
 	//esta funcion debe retornar un arreglo de json 
-	//[{nombre: "miproyecto"},{...},{...}
-	//]
-	public String listarProyectos(String nombre){
-		//String workspace= "/home/brucce/Documentos/";SOLO REFERENCIA                
-		File carpetaUsuario = new File(workspace+nombre);
+	//[{nombre: "mi primer proyecto", descripcion: "probando el sistema"},
+	
+	public String listarProyectos(String nombre){ //nombre carpeta usuario                
+		File carpetaUsuario = new File(workspace+nombre); //agregar +nombre
 		if(carpetaUsuario.exists()){
-			out = Arrays.toString(carpetaUsuario.list());
-			//System.out.println(Arrays.toString(carpetaUsuario.list()));
-        
+			
+			//lista que devuelve un arreglo con los nombres
+			String[] salida = carpetaUsuario.list();
+			int largo = salida.length-1;
+			//construccion del string necesario para el front 
+			out = "\"[";
+			for(int i=0; i<=largo ;i++){
+				out +="{nombre: "+salida[i]+", descripcion: "+"alguna descripcion"+"},";
+			}
+			out += "]\"";
+			//out = Arrays.toString(carpetaUsuario.list());
+			//System.out.println(Arrays.toString(carpetaUsuario.list()));	
 		}
 		else{
-			System.out.println("El usuario: "+ carpetaUsuario.getName()+ " no existe");
+			out = "carpeta no existe";
 		}
 		return out; //retorna en un string los proyectos
 	}
