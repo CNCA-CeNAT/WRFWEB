@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://testing.ceibasoft.net/Dominios/CajaDominios.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Parametrizaciones</title>
+		
+		<script src="index.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+        <link href="./css/bootstrap-theme.cssbootstrap-theme.css" rel="stylesheet" type="text/css">
+        <link href="./css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+        <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- Latest compiled and minified CSS -->     
+        <script src="./css/jquery.min.js"></script><style type="text/css"></style>
+        <script src="./css/bootstrap.min.js"></script>
+        <script src="./css/jquery.spinner.js"></script>
+        <script src="./css/jquery-1.12.0.min.js"></script> 
+        <link href="./css/bootstrap-spinner.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+        <style>        
+        	
+        	.pane{
+        		border-style: solid;
+        		border-width: 1px;
+        		border-color: black;
+        		height: 100%;
+        	
+				overflow: scroll;
+        	}
+			
+			
+        	.hspace{
+        		margin: 5px 0px 5px 0px;
+        	}
+        	.domain{
+        		padding: 10px;
+        		margin: 5px;
+        		border-style: solid;
+        		border-width: 1px;
+        		border-radius: 15px;
+        		background-color: #FFFFFF;
+        	}
+        	.main-container{
+        		position:absolute;
+        		top: 0;
+        		bottom: 0;
+        		left: 0;
+        		right: 0;
+        		overflow: hidden;
+        		padding-left: 2%;
+        		padding-right: 2%;
+        		z-index: -1;
+        	}
+        	.header{
+        		height: 10%;
+        	}
+			
+			.footer{
+        		height: 30%;
+        	}
+			
+        	.content{
+        		height: 60%;
+        	}
+        	
+        	html{
+        		min-height:100%;
+        	}
+        	
+        	body{
+        		height:100%;
+        	}
+        </style>
+        
+    </head>
+    
+    <body>     
+        <div class="main-container">
+            <div class="row header">
+            	<h1><strong>Parametrizaciones</strong></h1>
+            </div>
+            
+            <div class="row content pane"> 
+			
+				<table class="table"> 
+				
+					<thead> 					
+						<tr> 							 
+							 <th>Parametrizacion</th>
+							 <th>Valor</th>
+                             <th>Parametrizacion</th>
+							 <th>Valor</th>
+						</tr>
+					</thead>
+					
+					
+					<tbody> 
+						<tr> 							
+							<td><a href="#" onclick="describir('param1')">run_days</a></td>							
+							<td><input type="text" name="param1" id="param1" value="1"></td>
+                            
+                            <td><a href="#" onclick="describir('param2')">run_hours</a></td>
+							<td><input type="text" name="param2" id="param2" value="0"></td>
+						</tr> 
+						
+						<tr> 							
+                            <td><a href="#" onclick="describir('param3')">run_minutes</a></td>
+                            <td><input type="text" name="param3" id="param3" value="0"></td>
+                            
+                            <td><a href="#" onclick="describir('param4')">run_seconds</a></td>
+	                        <td><input type="text" name="param4" id="param4" value="0"></td>                   							
+						</tr> 
+                        
+                        <tr> 							
+                           <td><a href="#" onclick="describir('param5')">start_year (max_dom)</a></td>
+	                        <td><input type="text" name="param5" id="param5" value="2012"></td>
+                            
+                            <td><a href="#" onclick="describir('param6')">start_month (max_dom)</a></td>
+	                        <td><input type="text" name="param6" id="param6" value="06"></td>                    							
+						</tr> 
+                        
+                        <tr> 							
+                            <td><a href="#" onclick="describir('param7')">start_day (max_dom)</a></td>
+	                        <td><input type="text" name="param7" id="param7" value="11"></td>
+                            
+                            <td><a href="#" onclick="describir('param8')">start_hour (max_dom)</a></td>
+	                        <td><input type="text" name="param8" id="param8" value="12"></td>                  							
+						</tr> 
+                        
+                        <tr> 							
+                            <td><a href="#" onclick="describir('param9')">start_minute (max_dom)</a></td>
+	                        <td><input type="text" name="param9" id="param9" value="00"></td>
+                            
+                            <td><a href="#" onclick="describir('param10')">start_second (max_dom)</a></td>
+	                        <td><input type="text" name="param10"id="para10"value="00"></td>                   							
+						</tr> 
+                            
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param11')">end_year (max_dom)</a></td>
+	                       <td> <input type="text" name="param11"id="para11"value="2012"></td>
+                        
+                        <td><a href="#" onclick="describir('param12')">end_month (max_dom)</a></td>
+                            <td><input type="text" name="param12"id="para12"value="06"></td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param13')">end_day (max_dom)</a></td>
+                            <td><input type="text" name="param13"id="para13"value="12"></td>
+                            <td><a href="#" onclick="describir('param14')">end_hour (max_dom)</a></td>
+                            <td><input type="text" name="param14"id="para14"value="12"></td>
+                        </tr>
+                         
+                       
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param15')">end_minute (max_dom)</a></td>
+                            <td><input type="text" name="param15"id="para15"value="00"></td>
+                            <td><a href="#" onclick="describir('param16')">end_second (max_dom_</a></td>
+	                       <td><input type="text" name="param16"id="para16"value="00"></td>
+                        </tr>
+                         
+                       
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param17')">interval_seconds</a></td>
+                            <td><input type="text" name="param17"id="para17"value="10800"></td>
+                            <td><a href="#" onclick="describir('param18')">input_from_file (max_dom)</a></td>
+	                       <td><input type="text" name="param18"id="para18"value=".true."></td>
+                        </tr>
+                         
+                       
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param19')">fine_input_stream (max_dom)</a></td>
+                            <td><input type="text" name="param19"id="para19"value=""></td>
+                            <td><a href="#" onclick="describir('param20')">history_interval (max_dom)</a></td>
+                            <td><input type="text" name="param20"id="para20"value="60"></td>
+                        </tr>
+                         
+                       
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param21')">history_interval_d (max_dom)</a></td>
+                            <td><input type="text" name="param21"id="para21"value="1"></td>
+                            <td><a href="#" onclick="describir('param22')">history_interval_h (max_dom)</a></td>
+                            <td><input type="text" name="param22"id="para22"value="1"></td>
+                        </tr>
+                         
+                        
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param23')">history_interval_m (max_dom)</a></td>
+                            <td><input type="text" name="param23"id="para23"value="1"></td>
+                           <td><a href="#" onclick="describir('param24')">history_interval_s (max_dom)</a></td>
+	                        <td><input type="text" name="param10"id="para10"value="1"></td>
+                        </tr>
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param25')">frames_per_outfile (max_dom)</a></td>
+	                       <td><input type="text" name="param25"id="para25"value="1"></td>
+                            <td><a href="#" onclick="describir('param26')">restart</a></td>
+	                       <td><input type="text" name="param26"id="para26"value=".false."></td>
+                        </tr>
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param27')">restart_interval</a></td>
+	                       <td><input type="text" name="param27"id="para27"value="1440"></td>
+                            <td><a href="#" onclick="describir('param28')">override_restart_timers</a></td>
+	                       <td><input type="text" name="param28"id="para28"value=".false."></td>
+                        </tr>
+                         
+                        <tr>
+                            <td><a href="#" onclick="describir('param29')">write_hist_at_0h_rst</a></td>
+	                       <td><input type="text" name="param29"id="para29"value=".false."></td>
+                            <td><a href="#" onclick="describir('param30')">output_ready_flag</a></td>
+	                       <td><input type="text" name="param30"id="para30"value=".true."></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param31')">reset_simulation_start</a></td>
+	                       <td><input type="text" name="param31"id="para31"value=".false."></td>
+                            <td><a href="#" onclick="describir('param32')">auxinput1_inname</a></td>
+	                       <td><input type="text" name="param32"id="para32"value="met_em.d<domain><date>"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param33')">auxinput4_inname</a></td>
+	                       <td><input type="text" name="param33"id="para33"value="wrflowinp_d<domain>"></td>
+                            <td><a href="#" onclick="describir('param34')">auxinput4_interval (max_dom)</a></td>
+	                       <td><input type="text" name="param34"id="para34"value="360"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param35')">io_form_auxinput4</a></td>
+	                       <td><input type="text" name="param35"id="para35"value="2"></td>
+                            <td><a href="#" onclick="describir('param36')">io_form_history</a></td>
+	                       <td><input type="text" name="param36"id="para36"value=""></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param37')">io_form_restart</a></td>
+	                       <td><input type="text" name="param37"id="para37"value=""></td>
+                            <td><a href="#" onclick="describir('param38')">io_form_input</a></td>
+	                       <td><input type="text" name="param38"id="para38"value=""></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param39')">io_form_boundary</a></td>
+	                       <td><input type="text" name="param39"id="para39"value=""></td>
+                            <td><a href="#" onclick="describir('param40')">ncd_nofill</a></td>
+	                       <td><input type="text" name="param40"id="para40"value=".true."></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param41')">io_form_auxinput2</a></td>
+	                       <td><input type="text" name="param41"id="para41"value=""></td>
+                            <td><a href="#" onclick="describir('param42')">diag_print</a></td>
+                            <td><input type="text" name="param42"id="para42"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param43')">debug_level</a></td>
+	                       <td><input type="text" name="param43"id="para43"value="0"></td>
+                            <td><a href="#" onclick="describir('param44')">auxhist2_outname)</a></td>
+	                       <td><input type="text" name="param44"id="para44"value="rainfall_d<domain>"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param45')">auxhist2_interval (max_dom)</a></td>
+	                       <td><input type="text" name="param45"id="para45"value="10"></td>
+                            <td><a href="#" onclick="describir('param46')">io_form_auxhist2</a></td>
+	                       <td><input type="text" name="param46"id="para46"value=""></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param47')">frames_per_auxhist2 (max_dom)</a></td>
+	                       <td><input type="text" name="param47"id="para47"value="1000"></td>
+                            <td><a href="#" onclick="describir('param48')">auxinput11_interval</a></td>
+	                       <td><input type="text" name="param48"id="para48"value="10"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param49')">auxinput11_end_h</a></td>
+                            <td><input type="text" name="param49"id="para49"value="6"></td>
+                            <td><a href="#" onclick="describir('param50')">nocolons</a></td>
+                            <td><input type="text" name="param50"id="para50"value=".false."></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param51')">write_input</a></td>
+                            <td><input type="text" name="param51"id="para51"value=".true."></td>
+                            <td><a href="#" onclick="describir('param52')">inputout_interval</a></td>
+                            <td><input type="text" name="param52"id="para52"value="180"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param53')">input_outname</a></td>
+                            <td><input type="text" name="param53"id="para53"value="wrf_3dvar_input_d<domain>_<date>"></td>
+                            <td><a href="#" onclick="describir('param54')">inputout_begin_y</a></td>
+                            <td><input type="text" name="param54"id="para54"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param55')">inputout_begin_d</a></td>
+                            <td><input type="text" name="param55"id="para55"value="0"></td>
+                            <td><a href="#" onclick="describir('param56')">inputout_begin_h</a></td>
+                            <td><input type="text" name="param56"id="para56"value="3"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param57')">inputout_begin_m</a></td>
+                            <td><input type="text" name="param57"id="para57"value="0"></td>
+                            <td><a href="#" onclick="describir('param58')">inputout_begin_s</a></td>
+                            <td><input type="text" name="param58"id="para58"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param59')">inputout_end_y</a></td>
+                            <td><input type="text" name="param59"id="para59"value="0"></td>
+                            <td><a href="#" onclick="describir('param60')">inputout_end_d</a></td>
+                            <td><input type="text" name="param60"id="para60"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param61')">inputout_end_h</a></td>
+                            <td><input type="text" name="param61"id="para61"value="12"></td>
+                            <td><a href="#" onclick="describir('param62')">inputout_end_m</a></td>
+                            <td><input type="text" name="param62"id="para62"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param63')">inputout_end_s</a></td>
+                            <td><input type="text" name="param63"id="para63"value="0"></td>
+                            <td><a href="#" onclick="describir('param64')">all_ic_times</a></td>
+                            <td><input type="text" name="param64"id="para64"value=".false."></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param65')">adjust_output_times</a></td>
+                            <td><input type="text" name="param65"id="para65"value=".false."></td>
+                            <td><a href="#" onclick="describir('param66')">output_ready_flag</a></td>
+                            <td><input type="text" name="param66"id="para66"value=".true."></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param67')">output_diagnostics</a></td>
+                            <td><input type="text" name="param67"id="para67"value="0"></td>
+                            <td><a href="#" onclick="describir('param68')">nwp_diagnostics</a></td>
+                            <td><input type="text" name="param68"id="para68"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param69')">input_from_hires </a></td>
+                            <td><input type="text" name="param69"id="para69"value=".false."></td>
+                            <td><a href="#" onclick="describir('param70')">rsmas_data_path</a></td>
+                            <td><input type="text" name="param70"id="para70"value="“high-res-data-d</td>irectory”"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param71')">iofields_filename (max_dom)</a></td>
+                            <td><input type="text" name="param71"id="para71"value="“my_iofields_list.txt”"></td>
+                            <td><a href="#" onclick="describir('param72')">ignore_iofields_warning</a></td>
+                            <td><input type="text" name="param72"id="para72"value=".true."></td>
+                        </tr>
+                        
+                        <tr>
+                             <td><a href="#" onclick="describir('param73')">time_step</a></td>
+                            <td><input type="text" name="param73"id="para73"value="60"></td>
+                            <td><a href="#" onclick="describir('param74')">time_step_fract_num</a></td>
+                            <td><input type="text" name="param74"id="para74"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param75')">time_step_fract_den</a></td>
+                            <td><input type="text" name="param75"id="para75"value="1"></td>
+                            <td><a href="#" onclick="describir('param76')">time_step_dfi</a></td>
+                            <td><input type="text" name="param76"id="para76"value="60"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param77')">max_dom</a></td>
+                            <td><input type="text" name="param77"id="para77"value="1"></td>
+                            <td><a href="#" onclick="describir('param78')">s_we (max_dom)</a></td>
+                            <td><input type="text" name="param78"id="para78"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param79')">e_we (max_dom)</a></td>
+                            <td><input type="text" name="param79"id="para79"value="91"></td>
+                            <td><a href="#" onclick="describir('param80')">s_sn (max_dom)</a></td>
+                            <td><input type="text" name="param80"id="para80"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param81')">e_sn (max_dom)</a></td>
+                            <td><input type="text" name="param81"id="para81"value="82"></td>
+                            <td><a href="#" onclick="describir('param82')">s_vert (max_dom)</a></td>
+                            <td><input type="text" name="param82"id="para82"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param83')">e_vert (max_dom)</a></td>
+                            <td><input type="text" name="param83"id="para83"value="30"></td>
+                            <td><a href="#" onclick="describir('param84')">dx (max_dom)</a></td>
+                            <td><input type="text" name="param84"id="para84"value="30000"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param85')">dy (max_dom)</a></td>
+                            <td><input type="text" name="param85"id="para85"value="30000"></td>
+                            <td><a href="#" onclick="describir('param86')">grid_id (max_dom)</a></td>
+                            <td><input type="text" name="param86"id="para86"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param87')">parent_id (max_dom)</a></td>
+                            <td><input type="text" name="param87"id="para87"value="0"></td>
+                            <td><a href="#" onclick="describir('param88')">i_parent_start (max_dom)</a></td>
+                            <td><input type="text" name="param88"id="para88"value="1"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param89')">j_parent_start (max_dom)</a></td>
+                            <td><input type="text" name="param89"id="para89"value="1"></td>
+                            <td><a href="#" onclick="describir('param90')">parent_grid_ratio (max_dom)</a></td>
+                            <td><input type="text" name="param90"id="para90"value="12"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param91')">parent_time_step_ratio (max_dom)</a></td>
+                            <td><input type="text" name="param91"id="para91"value="1"></td>
+                            <td><a href="#" onclick="describir('param92')">feedback</a></td>
+                            <td><input type="text" name="param92"id="para92"value="0"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param93')">smooth_option</a></td>
+                            <td><input type="text" name="param93"id="para93"value="0"></td>
+                            <td><a href="#" onclick="describir('param94')">hypsometric_opt</a></td>
+                            <td><input type="text" name="param94"id="para94"value="2"></td>
+                            
+                        </tr>
+                        
+                        <tr>
+                             <td><a href="#" onclick="describir('param95')">max_ts_locs</a></td>
+                            <td><input type="text" name="param95"id="para95"value="5"></td>
+                            <td><a href="#" onclick="describir('param96')">max_ts_level</a></td>
+                            <td><input type="text" name="param96"id="para96"value="15"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param97')">mp_physics (max_dom)</a></td>
+                            <td><input type="text" name="param97"id="para97"value="0"></td>
+                            <td><a href="#" onclick="describir('param98')">ra_lw_physics (max_dom)</a></td>
+                            <td><input type="text" name="param98"id="para98"value="0"></td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param99')">ra_sw_physics (max_dom)</a></td>
+                            <td><input type="text" name="param99"id="para99"value="0"></td>
+                            <td><a href="#" onclick="describir('param100')">radt (max_dom)</a></td>
+                            <td><input type="text" name="param100"id="para100"value="30"></td>
+                        </tr>
+                        
+                        <tr>
+                                 <td><a href="#" onclick="describir('param101')">sf_sfclay_physics (max_dom)</a></td>
+                            <td><input type="text" name="param101"id="para101"value=""></td>
+                            <td><a href="#" onclick="describir('param102')">sf_surface_physics (max_dom)</a></td>
+                            <td><input type="text" name="param102"id="para102"value=""></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><a href="#" onclick="describir('param103')">bl_pbl_physics (max_dom)</a></td>
+                            <td><input type="text" name="param103"id="para103"value=""></td>
+                            <td><a href="#" onclick="describir('param104')">bldt (max_dom)</a></td>
+                            <td><input type="text" name="param104"id="para104"value="0"></td>
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param105')">cu_physics (max_dom)</a></td>
+                            <td><input type="text" name="param105"id="para105"value=""></td>
+
+
+                            <td><a href="#" onclick="describir('param106')">cudt</a></td>
+                            <td><input type="text" name="param106"id="para106"value="0"></td>
+   
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param107')">isfflx</a></td>
+                            <td><input type="text" name="param107"id="para107"value=""></td>
+
+
+                            <td><a href="#" onclick="describir('param108')">ifsnow</a></td>
+                            <td><input type="text" name="param108"id="para108"value=""></td>
+       
+                        
+                        </tr>
+                        
+                        
+                        <tr>
+
+                            <td><a href="#" onclick="describir('param109')">icloud</a></td>
+                            <td><input type="text" name="param109"id="para109"value=""></td>
+
+
+                            <td><a href="#" onclick="describir('param110')">surface_input_source</a></td>
+                            <td><input type="text" name="param110"id="para110"value=""></td>
+
+
+                        </tr>
+                        
+                        <tr>
+                          
+                            <td><a href="#" onclick="describir('param111')">num_soil_layers</a></td>
+                            <td><input type="text" name="param111"id="para111"value=""></td>
+
+                            <td><a href="#" onclick="describir('param112')">sf_urban_physics</a></td>
+                            <td><input type="text" name="param112"id="para112"value=""></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param113')">w_damping</a></td>
+                            <td><input type="text" name="param113"id="para113"value=""></td>
+
+                            <td><a href="#" onclick="describir('param114')">diff_opt (max_dom)</a></td>
+                            <td><input type="text" name="param114"id="para114"value=""></td>
+    
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                         
+                            <td><a href="#" onclick="describir('param115')">km_opt (max_dom)</a></td>
+                            <td><input type="text" name="param115"id="para115"value=""></td>
+
+                            <td><a href="#" onclick="describir('param116')">diff_6th_opt (max_dom)</a></td>
+                            <td><input type="text" name="param116"id="para116"value=""></td>
+
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param117')">diff_6th_factor</a></td>
+                            <td><input type="text" name="param117"id="para117"value="0.12"></td>
+
+                            <td><a href="#" onclick="describir('param118')">damp_opt</a></td>
+                            <td><input type="text" name="param118"id="para118"value=""></td>
+                
+                        </tr>
+                        
+                        <tr>
+                           
+                            <td><a href="#" onclick="describir('param119')">base_temp</a></td>
+                            <td><input type="text" name="param119"id="para119"value="290."></td>
+
+                            <td><a href="#" onclick="describir('param120')">zdamp (max_dom)</a></td>
+                            <td><input type="text" name="param120"id="para120"value="5000"></td>
+     
+                        
+                        </tr>
+                        
+                        <tr>
+                         
+                            <td><a href="#" onclick="describir('param121')">dampcoef (max_dom)</a></td>
+                            <td><input type="text" name="param121"id="para121"value="0."></td>
+
+                            <td><a href="#" onclick="describir('param122')">khdif (max_dom)</a</td>>
+                            <td><input type="text" name="param122"id="para122"value="0."></td>
+
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param123')">kvdif (max_dom)</a></td>
+                            <td><input type="text" name="param123"id="para123"value="0."></td>
+
+                            <td><a href="#" onclick="describir('param124')">non-hydrostatic (max_dom)</a></td>
+                            <td><input type="text" name="param124"id="para124"value=".false."></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                         
+                            <td><a href="#" onclick="describir('param125')">moist_adv_opt (max_dom)</a></td>
+                            <td><input type="text" name="param125"id="para125"value=""></td>
+
+                            <td><a href="#" onclick="describir('param126')">scalar_adv_opt (max_dom)</a></td>
+                            <td><input type="text" name="param126"id="para126"value=""></td>
+
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param127')">spec_bdy_width</a></td>
+                            <td><input type="text" name="param127"id="para127"value="5"></td>
+
+                            <td><a href="#" onclick="describir('param128')">spec_zone</a></td>
+                            <td><input type="text" name="param128"id="para128"value="1"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                        
+                            <td><a href="#" onclick="describir('param129')">relax_zone</a></td>
+                            <td><input type="text" name="param129"id="para129"value="4"></td>
+
+                            <td><a href="#" onclick="describir('param130')">specified</a></td>
+                            <td><input type="text" name="param130"id="para130"value=".true."></td>
+       
+                            
+                            
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param131')">spec_exp</a></td>
+                            <td><input type="text" name="param131"id="para131"value="0."></td>
+
+                            <td><a href="#" onclick="describir('param132')">max_ts_level</a></td>
+                            <td><input type="text" name="param132"id="para132"value="15"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                        
+                            <td><a href="#" onclick="describir('param133')">periodic_x (max_dom)</a></td>
+                            <td><input type="text" name="param133"id="para133"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param134')">symmetric_xs (max_dom)</a></td>
+                            <td><input type="text" name="param134"id="para134"value=".true."></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param134')">symmetric_xe (max_dom)</a></td>
+                            <td><input type="text" name="param134"id="para134"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param135')">open _xs (max_dom)</a></td>
+                            <td><input type="text" name="param135"id="para135"value=".true."></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param136')">open _xe (max_dom)</a></td>
+                            <td><input type="text" name="param136"id="para136"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param137')">periodic_y (max_dom)</a></td>
+                            <td><input type="text" name="param137"id="para137"value=".true."></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param138')">symmetric_ys (max_dom)</a></td>
+                            <td><input type="text" name="param138"id="para138"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param139')">symmetric_ye (max_dom)</a></td>
+                            <td><input type="text" name="param139"id="para139"value=".true."></td>
+             
+                        </tr>
+                        
+                        <tr>
+                       
+                            <td><a href="#" onclick="describir('param140')">open_ys (max_dom)</a></td>
+                            <td><input type="text" name="param140"id="para140"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param141')">open_ye (max_dom)</a></td>
+                            <td><input type="text" name="param141"id="para141"value=".true."></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param142')">nested (max_dom)</a></td>
+                            <td><input type="text" name="param142"id="para142"value=".false., .true., .true."></td>
+
+                            <td><a href="#" onclick="describir('param143')">polar (max_dom)</a></td>
+                            <td><input type="text" name="param143"id="para143"value=".true."></td>
+
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                         
+                            <td><a href="#" onclick="describir('param144')">constant_bc</a></td>
+                            <td><input type="text" name="param144"id="para144"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param145')">spec_bdy_final_mu</a></td>
+                            <td><input type="text" name="param145"id="para145"value="1"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param146')">have_bcs_moist </a></td>
+                            <td><input type="text" name="param146"id="para146"value=".false."></td>
+
+                            <td><a href="#" onclick="describir('param147')">have_bcs_scalar</a></td>
+                            <td><input type="text" name="param147"id="para147"value=".false."></td>
+       
+                        
+                            
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param148')">background_proc_id</a></td>
+                            <td><input type="text" name="param148"id="para148"value="255"></td>
+
+                            <td><a href="#" onclick="describir('param149')">forecast_proc_id</a></td>
+                            <td><input type="text" name="param149"id="para149"value="255"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param150')">production_status</a></td>
+                            <td><input type="text" name="param150"id="para150"value="255"></td>
+
+                            <td><a href="#" onclick="describir('param151')">compression</a></td>
+                            <td><input type="text" name="param151"id="para151"value=""></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param152')">nio_tasks_per_group</a></td>
+                            <td><input type="text" name="param152"id="para152"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param153')">nio_groups</a></td>
+                            <td><input type="text" name="param153"id="para153"value="1"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param154')">p_lev_diags</a></td>
+                            <td><input type="text" name="param154"id="para154"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param155')">num_press_levels</a></td>
+                            <td><input type="text" name="param155"id="para155"value="4"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                         
+                            <td><a href="#" onclick="describir('param156')">press_levels (max_plevs)</a></td>
+                            <td><input type="text" name="param156"id="para156"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param157')">use_tot_or_hyd_p</a></td>
+                            <td><input type="text" name="param157"id="para157"value="2"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param158')">z_lev_diags</a></td>
+                            <td><input type="text" name="param158"id="para158"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param159')">num_z_levels</a></td>
+                           <td><input type="text" name="param159"id="para159"value="0"></td>
+       
+                        
+                        </tr>
+                        
+                        
+                        
+                        <tr>
+                            
+
+                            <td>a href="#" onclick="describir('param160')">z_levels</a></td>
+                            <td><input type="text" name="param160"id="para160"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param161')">p_lev_missing</a></td>
+                            <td><input type="text" name="param161"id="para161"value="-999"></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param162')">afwa_diag_opt (max_dom)</a></td>
+                            <td><input type="text" name="param162"id="para162"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param163')">afwa_ptype_opt (max_dom)</a></td>
+                            <td><input type="text" name="param163"id="para163"value="0"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param164')">afwa_vil_opt (max_dom)</a></td>
+                            <td><input type="text" name="param164"id="para164"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param165')">afwa_radar_opt (max_dom) </a></td>
+                            <td><input type="text" name="param165"id="para165"value="0"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param166')">afwa_severe_opt (max_dom)</a></td>
+                            <td><input type="text" name="param166"id="para166"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param167')">afwa_icing_opt (max_dom)</a></td>
+                            <td><input type="text" name="param167"id="para167"value="0"></td>
+               
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param168')">afwa_vis_opt (max_dom)</a></td>
+                            <td><input type="text" name="param168"id="para168"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param169')">afwa_cloud_opt (max_dom)</a></td>
+                            <td><input type="text" name="param169"id="para169"value="0"></td>
+       
+                        </tr>
+                        
+                        <tr>
+                            
+                         
+                            <td><a href="#" onclick="describir('param170')">afwa_therm_opt (max_dom)</a></td>
+                            <td><input type="text" name="param170"id="para170"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param171')">afwa_turb_opt (max_dom)</a></td>
+                            <td><input type="text" name="param171"id="para171"value="0"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                           <td> <a href="#" onclick="describir('param172')">afwa_buoy_opt (max_dom)</a></td>
+                            <td><input type="text" name="param172"id="para172"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param173')">afwa_hailcast_opt (max_dom)</a></td>
+                            <td><input type="text" name="param173"id="para173"value="0"></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param174')">afwa_ptype_ccn_tmp</a></td>
+                            <td><input type="text" name="param174"id="para174"value="264.15"></td>
+
+                            <td><a href="#" onclick="describir('param175')">afwa_ptype_tot_melt</a></td>
+                            <td><input type="text" name="param175"id="para175"value="50"></td>
+      
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param176')">progn (max_dom)</a></td>
+                            <td><input type="text" name="param176"id="para176"value="0"></td>
+                            <td><a href="#" onclick="describir('param177')">insert_bogus_storm</a></td>
+	                       <td><input type="text" name="param177"id="para177"value=".false."></td>
+       
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param178')">remove_storm</a></td>
+                            <td><input type="text" name="param178"id="para178"value=".false."></td>
+
+                            <td><a href="#" onclick="describir('param179')">num_storm</a></td>
+                            <td><input type="text" name="param179"id="para179"value="1"></td>
+               
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param180')">latc_loc</a></td>
+                            <td><input type="text" name="param180"id="para180"value="-999."></td>
+
+                            <td><a href="#" onclick="describir('param181')">lonc_loc</a></td>
+                            <td><input type="text" name="param181"id="para181"value="-999."></td>
+                    
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param182')">vmax_meters_per_second (max_dom)</a></td>
+                            <td><input type="text" name="param182"id="para182"value="-999."></td>
+
+                            <td><a href="#" onclick="describir('param183')">rmax</a></td>
+                            <td><input type="text" name="param183"id="para183"value="-999."></td>
+      
+                        
+                        </tr>
+                        
+                        <tr>
+                           
+                            <td><a href="#" onclick="describir('param184')">vmax_ratio (max_dom)</a></td>
+                           <td> <input type="text" name="param184"id="para184"value="-999."></td>
+
+                            <td><a href="#" onclick="describir('param185')">rankine_lid</a></td>
+                            <td><input type="text" name="param185"id="para185"value="-999."></td>
+       
+                            
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                        
+                          <td>  <a href="#" onclick="describir('param186')">scm_force</a></td>
+                           <td> <input type="text" name="param186"id="para186"value="0"></td>
+
+                           <td> <a href="#" onclick="describir('param187')">scm_force_dx</a></td>
+                            <td><input type="text" name="param187"id="para187"value="4000."></td>
+                      
+                        </tr>
+                        
+                        <tr>
+                            
+                        
+                            <td><a href="#" onclick="describir('param188')">num_force_layers</a></td>
+                            <td><input type="text" name="param188"id="para188"value="8"></td>
+
+                            <td><a href="#" onclick="describir('param189')">scm_lu_index</a></td>
+                            <td><input type="text" name="param189"id="para189"value="2"></td>
+
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param190')">scm_isltyp</a></td>
+                            <td><input type="text" name="param190"id="para190"value="4"></td>
+
+                            <td><a href="#" onclick="describir('param191')">scm_vegfra</a></td>
+                            <td><input type="text" name="param191"id="para191"value="0.5"></td>
+      
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                          
+                            <td><a href="#" onclick="describir('param192')">scm_canwat</a></td>
+                            <td><input type="text" name="param192"id="para192"value="0.0"></td>
+
+                            <td><a href="#" onclick="describir('param193')">scm_lat</a></td>
+                            <td><input type="text" name="param193"id="para193"value="36.605"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param194')">scm_lon</a></td>
+                            <td><input type="text" name="param194"id="para194"value="-97.485"></td>
+
+                            <td><a href="#" onclick="describir('param195')">scm_th_adv</a></td>
+                            <td><input type="text" name="param195"id="para195"value=".true."></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param196')">scm_wind_adv</a></td>
+                            <td><input type="text" name="param196"id="para196"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param197')">scm_qv_adv</a></td>
+                            <td><input type="text" name="param197"id="para197"value=".true."></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param198')">scm_vert_adv</a></td>
+                            <td><input type="text" name="param198"id="para198"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param199')">scm_ql_adv</a></td>
+                            <td><input type="text" name="param199"id="para199"value=".true."></td>
+      
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param200')">num_force_soil_layers</a></td>
+                            <td><input type="text" name="param200"id="para200"value="5"></td>
+
+                            <td><a href="#" onclick="describir('param201')">scm_soilt_force</a></td>
+                            <td><input type="text" name="param201"id="para201"value=".true."></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param202')">scm_soilq_force</a></td>
+                            <td><input type="text" name="param202"id="para202"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param203')">scm_force_th_largescale</a></td>
+                            <td><input type="text" name="param203"id="para203"value=".true."></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param204')">scm_force_qv_largescale</a></td>
+                            <td><input type="text" name="param204"id="para204"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param205')">scm_force_ql_largescale</a></td>
+                            <td><input type="text" name="param205"id="para205"value=".true."></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td><a href="#" onclick="describir('param206')">scm_force_wind_largescale</a></td>
+                            <td><input type="text" name="param206"id="para206"value=".true."></td>
+                             <td><a href="#" onclick="describir('param207')">dfi_opt</a></td>
+                            <td><input type="text" name="param207"id="para207"value="0"></td>
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param208')">dfi_nfilter</a></td>
+                            <td><input type="text" name="param208"id="para208"value="0"></td>
+
+
+
+                            <td><a href="#" onclick="describir('param209')">dfi_write_filtered_input</a></td>
+                            <td><input type="text" name="param209"id="para209"value=".true."></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param210')">dfi_write_dfi_history</a></td>
+                            <td><input type="text" name="param210"id="para210"value=".false."></td>
+
+                            <td><a href="#" onclick="describir('param211')">dfi_cutoff_seconds</a></td>
+                            <td><input type="text" name="param211"id="para211"value="3600"></td>
+             
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                           <td> <a href="#" onclick="describir('param212')">dfi_time_dim</a></td>
+                            <td><input type="text" name="param212"id="para212"value="1000"></td>
+
+                            <td><a href="#" onclick="describir('param213')">dfi_bckstop_year</a></td>
+                            <td><input type="text" name="param213"id="para213"value="2001"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                             
+                            <td><a href="#" onclick="describir('param214')">dfi_bckstop_month</a></td>
+                            <td><input type="text" name="param214"id="para214"value="06"></td>
+
+                            <td><a href="#" onclick="describir('param215')">dfi_bckstop_day</a></td>
+                            <td><input type="text" name="param215"id="para215"value="11"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param216')">dfi_bckstop_hour</a></td>
+                           <td> <input type="text" name="param216"id="para216"value="11"></td>
+
+                            <td><a href="#" onclick="describir('param217')">dfi_bckstop_minute</a></td>
+                            <td><input type="text" name="param217"id="para217"value="00"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+
+                           <td> <a href="#" onclick="describir('param218')">dfi_bckstop_second</a></td>
+                           <td> <input type="text" name="param218"id="para218"value="00"></td>
+
+                           <td> <a href="#" onclick="describir('param219')">dfi_fwdstop_year</a></td>
+                           <td> <input type="text" name="param219"id="para219"value="2001"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                           <td> <a href="#" onclick="describir('param220')">dfi_fwdstop_month</a></td>
+                            <td><input type="text" name="param220"id="para220"value="06"></td>
+
+                          <td>  <a href="#" onclick="describir('param221')">dfi_fwdstop_day</a></td>
+                          <td>  <input type="text" name="param221"id="para221"value="11"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param222')">dfi_fwdstop_hour</a></td>
+                           <td> <input type="text" name="param222"id="para222"value="12"></td>
+
+                            <td><a href="#" onclick="describir('param223')">dfi_fwdstop_minute</a></td>
+                            <td><input type="text" name="param223"id="para223"value="30"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param224')">dfi_fwdstop_second</a></td>
+                            <td><input type="text" name="param224"id="para224"value="00"></td>
+
+                           <td> <a href="#" onclick="describir('param225')">dfi_radar</a></td>
+                           <td> <input type="text" name="param225"id="para225"value="0"></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param226')">grid_fdda (max_dom)</a></td>
+                           <td> <input type="text" name="param226"id="para226"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param227')">gfdda_inname</a></td>
+                            <td><input type="text" name="param227"id="para227"value="wrffdda_d<domain>"></td>     
+
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                           <td> <a href="#" onclick="describir('param228')">gfdda_interval_m (max_dom)</a></td>
+                            <td><input type="text" name="param228"id="para228"value="360"></td>
+
+                            <td><a href="#" onclick="describir('param229')">gfdda_end_h (max_dom)</a></td>
+                            <td><input type="text" name="param229"id="para229"value="6"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+
+                            <td><a href="#" onclick="describir('param230')">io_form_gfdda</a></td>
+                           <td> <input type="text" name="param230"id="para230"value=""></td>
+
+                            <td><a href="#" onclick="describir('param231')">fgdt (max_dom)</a></td>
+                            <td><input type="text" name="param231"id="para231"value="0"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param232')">if_no_pbl_nudging_uv (max_dom)</a></td>
+                           <td><input type="text" name="param232"id="para232"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param233')">if_no_pbl_nudging_t (max_dom)</a></td>
+                            <td><input type="text" name="param233"id="para233"value="0"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param234')">if_no_pbl_nudging_q (max_dom)</a></td>
+                           <td> <input type="text" name="param234"id="para234"value="0"></td>
+
+                           <td><a href="#" onclick="describir('param235')">if_zfac_uv (max_dom)</a></td>
+                           <td> <input type="text" name="param235"id="para235"value="0"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param236')">k_zfac_uv</a></td>
+                           <td> <input type="text" name="param236"id="para326"value="10"></td>
+
+                            <td><a href="#" onclick="describir('param237')">if_zfac_t (max_dom)</a></td>
+                            <td><input type="text" name="param237"id="para237"value="0"></td>
+                    
+                        </tr>
+                        
+                        <tr>
+                            
+                          
+                           <td> <a href="#" onclick="describir('param238')">k_zfac_t</a></td>
+                           <td> <input type="text" name="param238"id="para238"value="10"></td>
+
+
+                           <td> <a href="#" onclick="describir('param239')">if_zfac_q (max_dom)</a></td>
+                           <td> <input type="text" name="param239"id="para239"value="0"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param240')">k_zfac_q</a></td>
+                           <td> <input type="text" name="param240"id="para240"value="10"></td>
+
+                            <td><a href="#" onclick="describir('param241')">guv (max_dom)</a></td>
+                            <td><input type="text" name="param241"id="para241"value="0.0003"></td>
+       
+                            
+                            
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param242')">gt (max_dom)</a></td>
+                           <td> <input type="text" name="param242"id="para242"value="0.0003"></td>
+
+                           <td> <a href="#" onclick="describir('param243')">gq (max_dom)</a></td>
+                           <td> <input type="text" name="param243"id="para243"value="0.0003"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param244')">if_ramping</a></td>
+                            <td><input type="text" name="param244"id="para244"value="0"></td>
+
+                            <td><a href="#" onclick="describir('param245')">dtramp_min</a></td>
+                            <td><input type="text" name="param245"id="para245"value="60."></td>
+        
+                            
+                        </tr>
+                        
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param246')">grid_sfdda (max_dom)</a></td>
+                           <td> <input type="text" name="param246"id="para246"value=""></td>
+
+                            <td><a href="#" onclick="describir('param247')">sgfdda_inname</a></td>
+                            <td><input type="text" name="param247"id="para247"value="wrfsfdda_d<domain>"></td>
+              
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param248')">sgfdda_interval_m (max_dom)</a></td>
+                            <td><input type="text" name="param248"id="para248"value="360"></td>
+
+                            <td><a href="#" onclick="describir('param249')">sgfdda_end_h (max_dom)</a></td>
+                            <td><input type="text" name="param249"id="para249"value="6"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param250')">io_form_sgfdda</a></td>
+                            <td><input type="text" name="param250"id="para250"value="2"></td>
+
+                            <td><a href="#" onclick="describir('param251')">guv_sfc (max_dom)</a></td>
+                            <td><input type="text" name="param251"id="para251"value="0.0003"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param252')">gt_sfc (max_dom)</a></td>
+                            <td><input type="text" name="param252"id="para252"value="0.0003"></td>
+
+                            <td><a href="#" onclick="describir('param253')">gq_sfc (max_dom)</a></td>
+                            <td><input type="text" name="param253"id="para253"value="0.0003"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param254')">rinblw</a></td>
+                            <td><input type="text" name="param254"id="para254"value="250."></td>
+
+                            <td><a href="#" onclick="describir('param255')">fgdtzero (max_dom)</a></td>
+                            <td><input type="text" name="param255"id="para255"value="1"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param256')">if_no_pbl_nudging_ph (max_dom)</a></td>
+                            <td><input type="text" name="param256"id="para256"value="1"></td>
+
+                            <td><a href="#" onclick="describir('param257')">if_zfac_ph (max_dom)</a></td>
+                            <td><input type="text" name="param257"id="para257"value="0"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param258')">k_zfac_ph</a></td>
+                            <td><input type="text" name="param258"id="para258"value="10"></td>
+
+                            <td><a href="#" onclick="describir('param259')">gph (max_dom)</a></td>
+                            <td><input type="text" name="param259"id="para259"value="0.0003"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param260')">dk_zfac_uv (max_dom)</a></td>
+                            <td><input type="text" name="param260"id="para260"value="1"></td>
+
+                            <td><a href="#" onclick="describir('param261')">dk_zfac_t (max_dom)</a></td>
+                            <td><input type="text" name="param261"id="para261"value="1"></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param262')">dk_zfac_ph (max_dom)</a></td>
+                            <td><input type="text" name="param262"id="para262"value="1"></td>
+
+                            <td><a href="#" onclick="describir('param263')">xwavenum</a></td>
+                            <td><input type="text" name="param263"id="para263"value="3"></td>
+       
+                        
+                            
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param264')">ywavenum</a></td>
+                           <td> <input type="text" name="param264"id="para264"value="3"></td>
+
+                           <td> <a href="#" onclick="describir('param265')">obs_nudge_opt (max_dom)</a></td>
+                           <td> <input type="text" name="param265"id="para265"value="1"></td>
+                   
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param266')">max_obs</a></td>
+                           <td> <input type="text" name="param266"id="para266"value="150000"></td>
+
+                           <td> <a href="#" onclick="describir('param267')">fdda_start (max_dom)</a></td>
+                           <td> <input type="text" name="param267"id="para267"value="0."></td>
+               
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param268')">fdda_end (max_dom)</a></td>
+                            <td><input type="text" name="param268"id="para268"value="180."></td>
+
+                           <td> <a href="#" onclick="describir('param269')">obs_nudge_wind (max_dom)</a></td>
+                            <td><input type="text" name="param269"id="para269"value="1"></td>
+      
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param270')">obs_coef_wind (max_dom)</a></td>
+                            <td><input type="text" name="param270"id="para270"value="6.e-4"></td>
+
+                            <td><a href="#" onclick="describir('param271')">obs_nudge_temp (max_dom)</a></td>
+                            <td><input type="text" name="param271"id="para271"value="1"></td>
+               
+                        </tr>
+                        
+                        <tr>
+                            
+
+                           <td> <a href="#" onclick="describir('param272')">obs_coef_temp (max_dom)</a></td>
+                            <td><input type="text" name="param272"id="para272"value="6.e-4"></td>
+
+                            <td><a href="#" onclick="describir('param273')">obs_nudge_mois (max_dom)</a></td>
+                            <td><input type="text" name="param273"id="para273"value="1"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                           <td> <a href="#" onclick="describir('param274')">obs_coef_mois (max_dom)</a></td>
+                            <td><input type="text" name="param274"id="para274"value="6.e-4"></td>
+
+                           <td> <a href="#" onclick="describir('param275')">obs_coef_pstr</a></td>
+                           <td><input type="text" name="param275"id="para275"value="0."></td>
+
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                           <td> <a href="#" onclick="describir('param276')">obs_rinxy</a></td>
+                           <td> <input type="text" name="param276"id="para276"value="200."></td>
+
+                            <td><a href="#" onclick="describir('param277')">obs_rinsig</a></td>
+                           <td> <input type="text" name="param277"id="para277"value="0.1"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param278')">obs_twindo (max_dom)</a></td>
+                            <td><input type="text" name="param278"id="para278"value="0.666667"></td>
+
+                            <td><a href="#" onclick="describir('param279')">obs_npfi</a></td>
+                            <td><input type="text" name="param279"id="para279"value="10"></td>
+              
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param280)">obs_ionf (max_dom)</a></td>
+                           <td> <input type="text" name="param280"id="para280"value="1"></td>
+
+                           <td> <a href="#" onclick="describir('param281')">obs_idynin</a></td>
+                        <td>    <input type="text" name="param281"id="para281"value="1"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param282')">obs_dtramp</a></td>
+                            <td><input type="text" name="param282"id="para282"value="40."></td>
+
+                            <td><a href="#" onclick="describir('param283')">obs_prt_max</a></td>
+                            <td><input type="text" name="param283"id="para283"value="1000"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                            <td><a href="#" onclick="describir('param284')">obs_prt_freq (max_dom)</a></td>
+                            <td><input type="text" name="param284"id="para284"value="1000"></td>
+
+                            <td><a href="#" onclick="describir('param285')">obs_ipf_in4dob</a></td>
+                            <td><input type="text" name="param285"id="para285"value=".true."></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param286')">obs_ipf_errob</a></td>
+                            <td><input type="text" name="param286"id="para286"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param287')">obs_ipf_nudob</a></td>
+                            <td><input type="text" name="param287"id="para287"value=".true."></td>
+              
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                            <td><a href="#" onclick="describir('param288')">obs_ipf_init</a></td>
+                            <td><input type="text" name="param288"id="para288"value=".true."></td>
+
+                            <td><a href="#" onclick="describir('param289')">obs_no_pbl_nudge_uv (max_dom)</a></td>
+                            <td><input type="text" name="param289"id="para289"value="1"></td>
+                     
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                            <td><a href="#" onclick="describir('param290')">obs_no_pbl_nudge_t (max_dom)</a></td>
+                            <td><input type="text" name="param290"id="para290"value="1"></td>
+
+                            <td><a href="#" onclick="describir('param291')">obs_no_pbl_nudge_q (max_dom)</a></td>
+                            <td><input type="text" name="param291"id="para291"value="1"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param292')">obs_nudgezfullr1_uv</a></td>
+                            <td><input type="text" name="param292"id="para292"value="50"></td>
+
+                            <td><a href="#" onclick="describir('param293')">obs_nudgezrampr1_uv</a></td>
+                            <td><input type="text" name="param293"id="para293"value="50"></td>
+       
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param294')">obs_nudgezfullr2_uv</a></td>
+                            <td><input type="text" name="param294"id="para294"value="50"></td>
+
+                            <td><a href="#" onclick="describir('param295')">obs_nudgezrampr2_uv</a></td>
+                            <td><input type="text" name="param295"id="para295"value="50"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                            <td><a href="#" onclick="describir('param296')">obs_nudgezfullr4_uv</a></td>
+                            <td><input type="text" name="param296"id="para296"value="-5000"></td>
+
+                            <td><a href="#" onclick="describir('param297')">obs_nudgezrampr4_uv</a></td>
+                            <td><input type="text" name="param297"id="para297"value="50"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param298')">obs_nudgezfullr1_t</a></td>
+                            <td><input type="text" name="param298"id="para298"value="50"></td>
+
+                            <td><a href="#" onclick="describir('param299')">obs_nudgezrampr1_t</a></td>
+                            <td><input type="text" name="param299"id="para299"value="50"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                            <td><a href="#" onclick="describir('param300')">obs_nudgezfullr2_t</a></td>
+                            <td><input type="text" name="param300"id="para300"value="50"></td>
+
+                            <td><a href="#" onclick="describir('param301')">obs_nudgezrampr2_t</a></td>
+                            <td><input type="text" name="param301"id="para301"value="50"></td>
+        
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                            <td><a href="#" onclick="describir('param302')">obs_nudgezfullr4_t</a></td>
+                            <td><input type="text" name="param302"id="para302"value="-5000"></td>
+
+                            <td><a href="#" onclick="describir('param303')">obs_nudgezrampr4_t</a></td>
+                           <td> <input type="text" name="param303"id="para303"value="50"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           <td> <a href="#" onclick="describir('param304')">obs_nudgezfullr1_q</a></td>
+                           <td> <input type="text" name="param304"id="para304"value="50"></td>
+
+                           <td> <a href="#" onclick="describir('param305')">obs_nudgezrampr1_q</a></td>
+                           <td> <input type="text" name="param305"id="para305"value="50"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                             
+                          <td>  <a href="#" onclick="describir('param306')">obs_nudgezfullr2_q</a></td>
+                           <td> <input type="text" name="param306"id="para306"value="50"></td>
+
+                           <td> <a href="#" onclick="describir('param307')">obs_nudgezrampr2_q</a></td>
+                           <td> <input type="text" name="param307"id="para307"value="50"></td>
+        
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                           <td> <a href="#" onclick="describir('param308')">obs_nudgezfullr4_q</a></td>
+                           <td> <input type="text" name="param308"id="para308"value="-5000"></td>
+
+                           <td> <a href="#" onclick="describir('param309')">obs_nudgezrampr4_q</a></td>
+                           <td> <input type="text" name="param309"id="para309"value="50"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                           
+                           <td> <a href="#" onclick="describir('param310')">obs_nudgefullmin</a></td>
+                          <td>  <input type="text" name="param310"id="para310"value="50"></td>
+
+                          <td>  <a href="#" onclick="describir('param311')">obs_nudgezrampmin</a></td>
+                          <td>  <input type="text" name="param311"id="para311"value="50"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                          <td>  <a href="#" onclick="describir('param312')">obs_nudgezmax</a></td>
+                         <td>   <input type="text" name="param312"id="para312"value="3000"></td>
+
+                         <td>   <a href="#" onclick="describir('param313')">obs_sfcfact</a></td>
+                         <td>   <input type="text" name="param313"id="para313"value="1.0"></td>
+      
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                          <td>  <a href="#" onclick="describir('param314')">obs_sfcfacr</a></td>
+                         <td>   <input type="text" name="param314"id="para314"value="1.0"></td>
+
+                         <td>   <a href="#" onclick="describir('param315')">obs_dpsmx</a></td>
+                         <td>   <input type="text" name="param315"id="para315"value="7.5"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                         <td>   <a href="#" onclick="describir('param316')">obs_sfc_scheme_horiz</a></td>
+                         <td>   <input type="text" name="param316"id="para316"value=""></td>
+
+                         <td>   <a href="#" onclick="describir('param317')">obs_sfc_scheme_vert</a></td>
+                         <td>   <input type="text" name="param317"id="para317"value=""></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                            
+                        <td>    <a href="#" onclick="describir('param318')">obs_max_sndng_gap</a></td>
+                        <td>    <input type="text" name="param318"id="para318"value="20"></td>
+
+                        <td>    <a href="#" onclick="describir('param319')">obs_scl_neg_qv_innov</a></td>
+                        <td>    <input type="text" name="param319"id="para319"value="0"></td>
+       
+                        
+                        </tr>
+                        
+                        <tr>
+                            
+                        <td>    <a href="#" onclick="describir('param320')">skebs (max_dom)</a></td>
+                         <td>   <input type="text" name="param320"id="para320"value="1"></td>
+                        
+                        </tr>
+                        
+                       
+                        
+                        
+                        
+                        
+                        
+                        
+						
+					
+					</tbody>
+				
+				
+				
+				
+				
+				</table>
+					
+				
+			</div>
+				
+				
+				
+				
+		   
+            
+            
+            
+			<div class="row footer">
+            	<h1><strong>Descripcion</strong></h1>
+				<div class="descripcion">
+					<div id="descripcion">Aqui se mostrará la descripcion de cada parametrización de la lista</div>
+				</div>
+				
+            </div>
+			
+			
+			
+        </div>
+    
+
+</body></html>
