@@ -26,7 +26,7 @@ public class AdmiProyeServlet extends HttpServlet {
 	        }
 	       
 	    //arreglo que contiene los parametros
-		String[] pars = datos.split("¡");
+		String[] pars = datos.split("&");
 		
 		//los posibles parametros de funcion serían: nuevo, eliminar, lista, 
 		
