@@ -86,15 +86,18 @@ public class Proyectos {
 		File carpetaUsuario = new File(workspace+nombre); //agregar +nombre
 		if(carpetaUsuario.exists()){
 			
+			
 			//lista que devuelve un arreglo con los nombres
 			String[] salida = carpetaUsuario.list();
 			int largo = salida.length-1;
 			//construccion del string necesario para el front 
-			out = "\"[";
+			//out = "\"[";
 			for(int i=0; i<=largo ;i++){
-				out +="{nombre: "+salida[i]+", descripcion: "+"alguna descripcion"+"},";
+				out +=salida[i]+",";    //"{nombre: "+salida[i]+", descripcion: "+"alguna descripcion"+"},";
 			}
-			out += "]\"";
+			//out += "]\"";
+			
+			
 			//out = Arrays.toString(carpetaUsuario.list());
 			//System.out.println(Arrays.toString(carpetaUsuario.list()));	
 		}
