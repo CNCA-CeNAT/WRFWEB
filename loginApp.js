@@ -38,7 +38,7 @@ app.controller("loginCtrl", ['$scope','$http','$window', function($scope, $http,
 				var req2 = {
 							method: 'POST', 
 							url: 'http://sharelatex.cenat.ac.cr:8080/interfazWRF/Proyectos',
-							data: "nuser"+"¡"+vm.username
+							data: "nuser"+"&"+vm.username
 				};
 				$http(req2).then(function (response) {       //successCallback
 						console.log("entre al exitoso");//debugger borrar--------------
